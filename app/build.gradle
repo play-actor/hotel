@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+
+kapt {
+    correctErrorTypes true
+}
+
+android {
+    namespace 'com.vomisareg.hotel'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.vomisareg.hotel"
+        minSdk 28
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+    maven { url 'https://developer.huawei.com/repo/' }
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.7.2'
+
+    def versionLifecycle = "2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versionLifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versionLifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versionLifecycle"
+
+    //cicerone
+    implementation("com.github.terrakok:cicerone:7.1")
+
+    //Dagger 2
+    def versionDagger = '2.45'
+    implementation "com.google.dagger:dagger:$versionDagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$versionDagger"
+    kapt("com.google.dagger:dagger-compiler:$versionDagger")
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Пикассо
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    def versionCoroutines = "1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versionCoroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versionCoroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versionCoroutines"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.11.0"
+
+    // Gson.
+    implementation "com.google.code.gson:gson:2.10.1"
+
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+}

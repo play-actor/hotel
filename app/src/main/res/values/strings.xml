@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">hotel</string>
+    <string name="about_hotel">Об отеле</string>
+    <string name="hotel_title">Отель</string>
+    <string name="room_booking_title">Бронирование</string>
+    <string name="to_rooms">К выбору номера</string>
+    <string name="to_booking">Выбрать номер</string>
+    <string name="facilities_label">Удобства</string>
+    <string name="included_label">Что включено</string>
+    <string name="not_included_label">Что не включено</string>
+    <string name="function_description">Самое необходимое</string>
+    <string name="about_room">Подробней о номере</string>
+    <string name="fly_from">Вылет из</string>
+    <string name="address_hotel">Страна, город</string>
+    <string name="date">Даты</string>
+    <string name="count_night">Кол-во ночей</string>
+    <string name="room">Номер</string>
+    <string name="catering_at_the_hotel">Питание</string>
+    <string name="attention">Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="email">Почта</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="citizenship">Гражданство</string>
+    <string name="foreign_passport_number">Номер загранпаспорта</string>
+    <string name="expiration_date_of_foreign_passport">Срок действия загранпаспорта</string>
+    <string name="bayer_info">Инфорнация о покупателе</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string name="order_is_accepted">Ваш заказ принят в работу</string>
+    <string name="order_is_accepted_description">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). \n Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+    <string name="order_paid">Заказ оплачен</string>
+    <string name="super_title">Супер!</string>
+</resources>
