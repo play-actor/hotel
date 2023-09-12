@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vomisareg.hotel.adapter.CompositeDelegateAdapter
+import com.vomisareg.hotel.adapter.base.CompositeDelegateAdapter
 import com.vomisareg.hotel.adapter.HotelDescriptionDelegateAdapter
 import com.vomisareg.hotel.adapter.HotelDescriptionItem
 import com.vomisareg.hotel.adapter.HotelMainDelegateAdapter
 import com.vomisareg.hotel.adapter.HotelMainItem
 import com.vomisareg.hotel.databinding.FragmentHotelBinding
-import com.vomisareg.hotel.di.ComponentManager
 
 
 class HotelFragment : Fragment() {

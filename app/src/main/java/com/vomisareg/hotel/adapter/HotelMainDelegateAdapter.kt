@@ -2,6 +2,8 @@ package com.vomisareg.hotel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
+import com.vomisareg.hotel.adapter.base.ViewPagerAdapter
 import com.vomisareg.hotel.databinding.HotelMainBinding
 
 
@@ -9,7 +11,9 @@ class HotelMainDelegateAdapter(val context: Context) :
    ViewBindingDelegateAdapter<HotelMainItem, HotelMainBinding>(
       HotelMainBinding::inflate
    ) {
-
+   override fun validate(): Boolean {
+      return true
+   }
 
    @SuppressLint("SetTextI18n")
    override fun HotelMainBinding.onBind(item: HotelMainItem) {

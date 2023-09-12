@@ -7,9 +7,9 @@ import android.telephony.PhoneNumberUtils
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.util.Log
 import android.util.Patterns
 import com.vomisareg.hotel.R
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.BuyerInfoBinding
 import com.vomisareg.hotel.util.isNull
 
@@ -19,7 +19,9 @@ class BuyerInfoDelegateAdapter(val context: Context) :
       BuyerInfoBinding::inflate
    ) {
 
-
+   override fun validate(): Boolean {
+      return true
+   }
    @SuppressLint("SetTextI18n")
    override fun BuyerInfoBinding.onBind(item: BuyerInfoModelItem) {
       emailText.addTextChangedListener(object : TextWatcher {

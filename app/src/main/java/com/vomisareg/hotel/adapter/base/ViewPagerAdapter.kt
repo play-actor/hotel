@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter
+package com.vomisareg.hotel.adapter.base
 
 import android.content.Context
 import android.view.View

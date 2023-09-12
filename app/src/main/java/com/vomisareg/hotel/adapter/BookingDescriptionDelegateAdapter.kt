@@ -2,6 +2,7 @@ package com.vomisareg.hotel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.BookingDescriptionItemBinding
 
 
@@ -10,7 +11,9 @@ class BookingDescriptionDelegateAdapter(val context: Context) :
       BookingDescriptionItemBinding::inflate
    ) {
 
-
+   override fun validate(): Boolean {
+      return true
+   }
    @SuppressLint("SetTextI18n")
    override fun BookingDescriptionItemBinding.onBind(item: BookingDescriptionModelItem) {
       addressHotelTitle.text = item.arrival_country

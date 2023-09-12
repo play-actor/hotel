@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter
+package com.vomisareg.hotel.adapter.base
 
 data class AdaptersState(
    private val adapters: List<DelegateAdapter>,
@@ -21,4 +21,8 @@ data class AdaptersState(
 
    fun getAdapterByItemPosition(itemPosition: Int): DelegateAdapter =
       adapters[getAdapterPosition(itemPosition)]
+
+   fun getDelegateAdapters(): List<DelegateAdapter> {
+      return adapters
+   }
 }

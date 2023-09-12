@@ -2,6 +2,7 @@ package com.vomisareg.hotel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.BookingMainBinding
 
 
@@ -10,12 +11,14 @@ class BookingMainDelegateAdapter(val context: Context) :
       BookingMainBinding::inflate
    ) {
 
-
+   override fun validate(): Boolean {
+      return true
+   }
 
    @SuppressLint("SetTextI18n")
    override fun BookingMainBinding.onBind(item: BookingMainModelItem) {
-      label.text =item.name
-      address.text =item.address
+      label.text = item.name
+      address.text = item.address
       rating.tvDescriptionHotel.text = "${item.rating} ${item.rating_name}"
    }
 

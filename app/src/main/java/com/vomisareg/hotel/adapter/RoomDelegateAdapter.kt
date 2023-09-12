@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewGroup.MarginLayoutParams
 import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.updateLayoutParams
 import com.github.terrakok.cicerone.Router
 import com.vomisareg.hotel.R
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
+import com.vomisareg.hotel.adapter.base.ViewPagerAdapter
 import com.vomisareg.hotel.databinding.RoomMainBinding
 import com.vomisareg.hotel.di.ComponentManager
 import com.vomisareg.hotel.navigation.Screens
@@ -22,11 +22,16 @@ class RoomDelegateAdapter(val context: Context) :
       RoomMainBinding::inflate
    ) {
    private var idIter: Int = 0
+
    @Inject
    lateinit var router: Router
 
    init {
       ComponentManager.instance.appComponent.inject(this)
+   }
+
+   override fun validate(): Boolean {
+      return true
    }
 
    @SuppressLint("SetTextI18n")
@@ -53,7 +58,7 @@ class RoomDelegateAdapter(val context: Context) :
             llForTag.findViewById<Flow>(R.id.flow).referencedIds.plus(
                llForTag.findViewById<ConstraintLayout>(idIter).id
             )
-         idIter ++
+         idIter++
       }
       btnInBooking.setOnClickListener {
          router.navigateTo(Screens.bookingScreen())

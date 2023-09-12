@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter
+package com.vomisareg.hotel.adapter.base
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,4 +12,5 @@ interface DelegateAdapter {
    fun itemContent(item: Any): Any
    fun onAttachedToWindow(holder: RecyclerView.ViewHolder)
    fun onDetachedFromWindow(holder: RecyclerView.ViewHolder)
+   fun validate():Boolean
 }

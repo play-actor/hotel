@@ -9,12 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vomisareg.hotel.R
-import com.vomisareg.hotel.adapter.CompositeDelegateAdapter
-import com.vomisareg.hotel.adapter.HotelDescriptionItem
+import com.vomisareg.hotel.adapter.base.CompositeDelegateAdapter
 import com.vomisareg.hotel.adapter.RoomDelegateAdapter
 import com.vomisareg.hotel.adapter.RoomModelItem
 import com.vomisareg.hotel.databinding.FragmentRoomBinding
-import com.vomisareg.hotel.model.RoomModel
 
 class RoomsFragment : Fragment() {
    private var viewModel: RoomsViewModel? = null

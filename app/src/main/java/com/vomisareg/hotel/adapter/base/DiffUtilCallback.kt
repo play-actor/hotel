@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter
+package com.vomisareg.hotel.adapter.base
 
 import androidx.recyclerview.widget.DiffUtil
 

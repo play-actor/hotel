@@ -1,18 +1,13 @@
 package com.vomisareg.hotel.ui.booking
 
 import android.annotation.SuppressLint
-import android.content.res.ColorStateList
 import android.os.Bundle
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.textfield.TextInputEditText
-import com.vomisareg.hotel.R
 import com.vomisareg.hotel.adapter.AddTouristsDelegateAdapter
 import com.vomisareg.hotel.adapter.AddTouristsModelItem
 import com.vomisareg.hotel.adapter.BookingDescriptionDelegateAdapter
@@ -21,16 +16,14 @@ import com.vomisareg.hotel.adapter.BookingMainDelegateAdapter
 import com.vomisareg.hotel.adapter.BookingMainModelItem
 import com.vomisareg.hotel.adapter.BuyerInfoDelegateAdapter
 import com.vomisareg.hotel.adapter.BuyerInfoModelItem
-import com.vomisareg.hotel.adapter.CompositeDelegateAdapter
+import com.vomisareg.hotel.adapter.base.CompositeDelegateAdapter
 import com.vomisareg.hotel.adapter.PriceDelegateAdapter
 import com.vomisareg.hotel.adapter.PriceModelItem
 import com.vomisareg.hotel.adapter.TouristsDelegateAdapter
 import com.vomisareg.hotel.adapter.TouristsModelItem
 import com.vomisareg.hotel.bus.BusEvent
 import com.vomisareg.hotel.bus.EventHandler
-import com.vomisareg.hotel.databinding.BuyerInfoBinding
 import com.vomisareg.hotel.databinding.FragmentRoomBookingBinding
-import com.vomisareg.hotel.databinding.TouristItemBinding
 import com.vomisareg.hotel.di.ComponentManager
 import com.vomisareg.hotel.repository.DataRepository
 import kotlinx.coroutines.CoroutineScope
@@ -153,44 +146,8 @@ class BookingRoomFragment : Fragment() {
    }
 
    private fun paymentVerification() {
-      if (validate()) {
+      if (comAdapter.value?.validate() == true) {
          this.binding.motionLayout.transitionToEnd()
       }
    }
-
-   private fun validateText(vararg fields: TextInputEditText): Boolean {
-      var isCorrect = true
-      fields.forEach { field ->
-         if (field.text.isNullOrEmpty()) {
-            field.setBackgroundColor(resources.getColor(R.color.error))
-            isCorrect = false
-         }
-      }
-      return isCorrect
-   }
-
-   private fun validate(): Boolean {
-      var isCorrect = true
-      binding.rv.children.forEach { item ->
-         try {
-            val tourist = TouristItemBinding.bind(item)
-            if (!validateText(
-                  tourist.firstNameText,
-                  tourist.lastNameText,
-                  tourist.birthdayText,
-                  tourist.citizenshipText,
-                  tourist.foreignPassportNumberText,
-                  tourist.expirationDateOfForeignPassportText,
-               )
-            ) {
-               isCorrect = false
-            }
-         } catch (_: Exception) {
-         }
-      }
-      return isCorrect
-   }
-
-
-
 }

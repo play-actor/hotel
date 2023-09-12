@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.vomisareg.hotel.R
+import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.HotelDescriptionItemBinding
 
 
@@ -16,6 +17,9 @@ class HotelDescriptionDelegateAdapter(val context: Context) :
       HotelDescriptionItemBinding::inflate
    ) {
    private var idIter: Int = 0
+   override fun validate(): Boolean {
+      return true
+   }
 
    override fun HotelDescriptionItemBinding.onBind(item: HotelDescriptionItem) {
       tvDescription.text = item.description
