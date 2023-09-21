@@ -8,8 +8,8 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Patterns
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.R
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.BuyerInfoBinding
 import com.vomisareg.hotel.util.isNull
 
@@ -22,6 +22,7 @@ class BuyerInfoDelegateAdapter(val context: Context) :
    override fun validate(): Boolean {
       return true
    }
+
    @SuppressLint("SetTextI18n")
    override fun BuyerInfoBinding.onBind(item: BuyerInfoModelItem) {
       emailText.addTextChangedListener(object : TextWatcher {
@@ -38,11 +39,12 @@ class BuyerInfoDelegateAdapter(val context: Context) :
          }
       })
       bayerPhoneNumberText.setOnFocusChangeListener { v, hasFocus ->
-         if(hasFocus){
-         if (bayerPhoneNumberText.text?.isEmpty() == true) {
-            bayerPhoneNumberText.hint = "+7 (***) ***-**-**"
-         }}else{
-            bayerPhoneNumberText.hint=""
+         if (hasFocus) {
+            if (bayerPhoneNumberText.text?.isEmpty() == true) {
+               bayerPhoneNumberText.hint = "+7 (***) ***-**-**"
+            }
+         } else {
+            bayerPhoneNumberText.hint = ""
          }
       }
       bayerPhoneNumberText.addTextChangedListener(object : PhoneNumberFormattingTextWatcher("RU") {

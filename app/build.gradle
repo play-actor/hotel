@@ -30,7 +30,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
-        dataBinding = true
         viewBinding = true
     }
 }
@@ -52,6 +51,7 @@ dependencies {
 
     implementation 'androidx.fragment:fragment-ktx:1.6.1'
     implementation 'androidx.activity:activity-ktx:1.7.2'
+    implementation project(path: ':delegateAdapter')
 
     def versionLifecycle = "2.6.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versionLifecycle"

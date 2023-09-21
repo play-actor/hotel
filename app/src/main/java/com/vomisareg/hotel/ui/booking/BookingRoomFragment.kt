@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.vomisareg.delegateadapter.adapter.CompositeDelegateAdapter
 import com.vomisareg.hotel.adapter.AddTouristsDelegateAdapter
 import com.vomisareg.hotel.adapter.AddTouristsModelItem
 import com.vomisareg.hotel.adapter.BookingDescriptionDelegateAdapter
@@ -16,7 +17,6 @@ import com.vomisareg.hotel.adapter.BookingMainDelegateAdapter
 import com.vomisareg.hotel.adapter.BookingMainModelItem
 import com.vomisareg.hotel.adapter.BuyerInfoDelegateAdapter
 import com.vomisareg.hotel.adapter.BuyerInfoModelItem
-import com.vomisareg.hotel.adapter.base.CompositeDelegateAdapter
 import com.vomisareg.hotel.adapter.PriceDelegateAdapter
 import com.vomisareg.hotel.adapter.PriceModelItem
 import com.vomisareg.hotel.adapter.TouristsDelegateAdapter

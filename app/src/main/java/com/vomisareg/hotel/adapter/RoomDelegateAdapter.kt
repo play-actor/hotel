@@ -8,12 +8,15 @@ import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.github.terrakok.cicerone.Router
+import com.squareup.picasso.Picasso
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
+import com.vomisareg.delegateadapter.adapter.ViewPagerAdapter
 import com.vomisareg.hotel.R
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
-import com.vomisareg.hotel.adapter.base.ViewPagerAdapter
 import com.vomisareg.hotel.databinding.RoomMainBinding
 import com.vomisareg.hotel.di.ComponentManager
+import com.vomisareg.hotel.di.module.ImageModule
 import com.vomisareg.hotel.navigation.Screens
+import com.vomisareg.hotel.util.RoundedCornersTransformation
 import javax.inject.Inject
 
 
@@ -26,6 +29,9 @@ class RoomDelegateAdapter(val context: Context) :
    @Inject
    lateinit var router: Router
 
+   @Inject
+   lateinit var imageModule: ImageModule
+
    init {
       ComponentManager.instance.appComponent.inject(this)
    }
@@ -36,7 +42,10 @@ class RoomDelegateAdapter(val context: Context) :
 
    @SuppressLint("SetTextI18n")
    override fun RoomMainBinding.onBind(item: RoomModelItem) {
-      val viewPagerAdapter = ViewPagerAdapter(context, item.imageUrlsList)
+      val viewPagerAdapter =
+         ViewPagerAdapter(context, item.imageUrlsList.size) { imageView, position ->
+            imageModule.showImage(imageView,item.imageUrlsList,position)
+         }
       viewPager.adapter = viewPagerAdapter
       layoutTab.setupWithViewPager(viewPager)
       val listTag = item.peculiarities.sortedByDescending { it.length }

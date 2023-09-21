@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.R
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.HotelDescriptionItemBinding
 
 

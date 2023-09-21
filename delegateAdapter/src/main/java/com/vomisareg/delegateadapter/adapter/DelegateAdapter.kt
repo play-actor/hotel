@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter.base
+package com.vomisareg.delegateadapter.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

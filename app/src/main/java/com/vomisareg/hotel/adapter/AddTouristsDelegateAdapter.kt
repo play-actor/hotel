@@ -2,7 +2,7 @@ package com.vomisareg.hotel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.bus.BusEvent
 import com.vomisareg.hotel.bus.EventHandler
 import com.vomisareg.hotel.databinding.AddTouristItemBinding
@@ -34,5 +34,6 @@ class AddTouristsDelegateAdapter(val context: Context) :
    override fun validate(): Boolean {
       return true
    }
+
    override fun AddTouristsModelItem.getItemId(): Any = id
 }

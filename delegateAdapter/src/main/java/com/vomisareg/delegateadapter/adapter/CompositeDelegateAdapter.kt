@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter.base
+package com.vomisareg.delegateadapter.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -16,8 +16,6 @@ open class CompositeDelegateAdapter(vararg adapters: DelegateAdapter) : Volidate
       adapterState.data.forEachIndexed { index, any ->
          if (!adapterState.getAdapterByItemPosition(index).validate()) answer = false
       }
-
-//      adapterState.getDelegateAdapters().forEach { if (!it.validate()) answer = false }
       return answer
    }
 

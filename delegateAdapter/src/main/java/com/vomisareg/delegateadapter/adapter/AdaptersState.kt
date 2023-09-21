@@ -1,4 +1,4 @@
-package com.vomisareg.hotel.adapter.base
+package com.vomisareg.delegateadapter.adapter
 
 data class AdaptersState(
    private val adapters: List<DelegateAdapter>,

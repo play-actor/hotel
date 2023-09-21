@@ -2,7 +2,7 @@ package com.vomisareg.hotel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.databinding.BookingMainBinding
 
 

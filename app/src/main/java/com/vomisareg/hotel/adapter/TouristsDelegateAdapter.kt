@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import com.google.android.material.textfield.TextInputEditText
+import com.vomisareg.delegateadapter.adapter.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.R
-import com.vomisareg.hotel.adapter.base.ViewBindingDelegateAdapter
 import com.vomisareg.hotel.bus.EventHandler
 import com.vomisareg.hotel.databinding.TouristItemBinding
 import com.vomisareg.hotel.di.ComponentManager
@@ -49,17 +49,18 @@ class TouristsDelegateAdapter(val context: Context) :
    override fun validate(): Boolean {
       var isCorrect = true
       binding.forEach {
-      if (!validateText(
-            it.firstNameText,
-            it.lastNameText,
-            it.birthdayText,
-            it.citizenshipText,
-            it.foreignPassportNumberText,
-            it.expirationDateOfForeignPassportText,
-         )
-      ) {
-         isCorrect = false
-      }}
+         if (!validateText(
+               it.firstNameText,
+               it.lastNameText,
+               it.birthdayText,
+               it.citizenshipText,
+               it.foreignPassportNumberText,
+               it.expirationDateOfForeignPassportText,
+            )
+         ) {
+            isCorrect = false
+         }
+      }
       return isCorrect
    }
 
