@@ -3,8 +3,10 @@ package com.vomisareg.hotel.ui.hotel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.terrakok.cicerone.Router
 import com.vomisareg.hotel.di.ComponentManager
 import com.vomisareg.hotel.model.HotelModel
+import com.vomisareg.hotel.navigation.Screens
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -13,6 +15,9 @@ import javax.inject.Inject
 class HotelViewModel : ViewModel() {
    @Inject
    lateinit var hotelUseCase: HotelUseCase
+
+   @Inject
+   lateinit var router: Router
 
    val hotelModelMutableLiveData = MutableLiveData<HotelModel>()
 
@@ -31,7 +36,7 @@ class HotelViewModel : ViewModel() {
    }
 
    fun openRoom(hotelName: String) {
-      hotelUseCase.openRoom(hotelName)
+      router.navigateTo(Screens.roomScreen(hotelName))
    }
 
 }
